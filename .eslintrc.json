@@ -1,0 +1,69 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "prettier",
+        "plugin:import/errors", // enabling import errors
+        "plugin:import/warnings", // enabling import warnings,
+        "plugin:import/typescript" // enabling import typescript
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": ["react", "@typescript-eslint", "import"],
+    "rules": {
+        "prettier/prettier": "error",
+        "indent": "off",
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "single"],
+        "semi": ["error", "never"],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin", // first of all import builtin modules like fs, path, etc..
+                    "external", // then third party libraries like lodash etc..
+                    "internal", // then our internal absolute imports
+                    "index", // then relatively import something from current directory
+                    "sibling", // then relatively import something inside nested directory of current directory
+                    "parent", // then relatively import some thing from parent directory
+                    "object", // lastly object if any,
+                    "unknown"
+                ],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc" /* sort in ascending order. Options: ['ignore', 'asc', 'desc'] */,
+                    "caseInsensitive": true /* ignore case. Options: [true, false] */
+                }
+            }
+        ]
+    },
+    "settings": {
+        "react": {
+            "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+        },
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            },
+            "typescript": {}
+        }
+    }
+}
