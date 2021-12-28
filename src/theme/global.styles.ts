@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { Themes } from './types'
-
 export const GlobalStyles = createGlobalStyle`
 
     @font-face {
@@ -34,12 +32,6 @@ export const GlobalStyles = createGlobalStyle`
             'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        transition: background-color 1.5s;
-        background-color: ${({ theme }) =>
-            theme.mode === Themes.DARK
-                ? theme.colors.Black
-                : theme.colors.BridalHealth}
-
     }
 
 `
