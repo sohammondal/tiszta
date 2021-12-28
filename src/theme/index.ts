@@ -5,6 +5,7 @@ import { Themes } from './types'
 
 export * from './types'
 
+export * from './common.styles'
 export { GlobalStyles } from './global.styles'
 
 export const theme: DefaultTheme = {

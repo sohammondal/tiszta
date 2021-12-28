@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
 import { AppProvider, useAppContext } from 'context'
@@ -16,7 +17,9 @@ const Index = () => {
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyles />
-            <App />
+            <Router>
+                <App />
+            </Router>
         </ThemeProvider>
     )
 }
