@@ -12,6 +12,11 @@ export const HamburgerMenu: React.FC<Props> = (props) => {
     const close = () => setOpen(false)
     const toggle = () => setOpen(!open)
 
+    /* Prevent scrolling when menu is open */
+    React.useEffect(() => {
+        document.body.style.overflow = open ? 'hidden' : 'unset'
+    }, [open])
+
     return (
         <>
             <BurgerButton open={open} toggle={toggle} />
