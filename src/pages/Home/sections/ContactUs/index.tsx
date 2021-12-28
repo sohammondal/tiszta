@@ -1,16 +1,20 @@
 import React from 'react'
-import styled from 'styled-components'
 
-import { flexRowCenter } from 'theme'
+import { Logo } from 'components'
 
-const Container = styled.section`
-    width: 100vw;
-    height: 80vh;
-    ${flexRowCenter}
-    @media only screen and (min-width: 1024px) {
-    }
-`
+import { Container, LogoWrapper, Section, Copyright } from './styles'
 
 export const ContactUs: React.FC = () => {
-    return <Container>Contact Us</Container>
+    return (
+        <Container>
+            <Section>
+                <LogoWrapper>
+                    <Logo fill="black" scaleOnHover />
+                </LogoWrapper>
+                <div>General</div>
+                <div>Contact</div>
+            </Section>
+            <Copyright>copyright</Copyright>
+        </Container>
+    )
 }
