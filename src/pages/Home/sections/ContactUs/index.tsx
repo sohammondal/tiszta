@@ -2,6 +2,8 @@ import React from 'react'
 
 import { Logo } from 'components'
 
+import { ContactFrom } from './ContactForm'
+import { General } from './General'
 import { Container, LogoWrapper, Section, Copyright } from './styles'
 
 export const ContactUs: React.FC = () => {
@@ -11,10 +13,25 @@ export const ContactUs: React.FC = () => {
                 <LogoWrapper>
                     <Logo fill="black" scaleOnHover />
                 </LogoWrapper>
-                <div>General</div>
-                <div>Contact</div>
+                <General />
+                <ContactFrom />
             </Section>
-            <Copyright>copyright</Copyright>
+            <Copyright>
+                <div>
+                    Copyright © {new Date().getFullYear()} Tiszta. All rights
+                    reserved.
+                </div>
+                <div>
+                    Developed by{' '}
+                    <a
+                        href="https://sohammondal.com"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Soham Mondal
+                    </a>
+                </div>
+            </Copyright>
         </Container>
     )
 }
