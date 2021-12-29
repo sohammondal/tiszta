@@ -19,7 +19,12 @@ export const Section = styled.section`
     width: 100%;
 `
 
-export const Copyright = styled.div``
+export const Copyright = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+`
 
 export const LogoWrapper = styled.div`
     width: 125px;
