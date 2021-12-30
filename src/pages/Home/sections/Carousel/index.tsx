@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import { flexRowCenter } from 'theme'
 
+import { pageSectionIds } from '../../../../constants'
+
 const Container = styled.section`
     width: 100vw;
     height: 100vh;
@@ -12,7 +14,5 @@ const Container = styled.section`
 `
 
 export const Carousel: React.FC = () => {
-    return (
-        <Container onClick={() => console.log('Carousel')}>Carousel</Container>
-    )
+    return <Container id={pageSectionIds.HOME.carousel}>Carousel</Container>
 }

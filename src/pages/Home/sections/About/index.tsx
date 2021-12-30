@@ -2,9 +2,11 @@ import React from 'react'
 
 import { Container, Section } from './styles'
 
+import { pageSectionIds } from '../../../../constants'
+
 export const About: React.FC = () => {
     return (
-        <Container>
+        <Container id={pageSectionIds.HOME.about}>
             <Section>
                 <h1>Est 2021</h1>
                 <p>

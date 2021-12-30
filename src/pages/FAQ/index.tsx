@@ -37,6 +37,7 @@ export const FAQ: React.FC = () => {
             section.scrollIntoView({
                 behavior: 'smooth',
                 block: 'center',
+                inline: 'center',
             })
     }, [state])
 

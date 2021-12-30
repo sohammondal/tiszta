@@ -6,9 +6,11 @@ import { ContactFrom } from './ContactForm'
 import { General } from './General'
 import { Container, LogoWrapper, Section, Copyright } from './styles'
 
+import { pageSectionIds } from '../../../../constants'
+
 export const ContactUs: React.FC = () => {
     return (
-        <Container>
+        <Container id={pageSectionIds.HOME.contactUs}>
             <Section>
                 <LogoWrapper>
                     <Logo fill="black" scaleOnHover />
