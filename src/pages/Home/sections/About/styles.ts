@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { flexColCenter, flexRowCenter } from 'theme'
 
 export const Container = styled.section`
-    height: 72vh;
     ${flexColCenter}
     @media only screen and (min-width: 1024px) {
+        height: 72vh;
         ${flexRowCenter}
     }
 `
