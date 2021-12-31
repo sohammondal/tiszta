@@ -2,20 +2,21 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
+import { SideBar } from './Sidebar'
+
 import { pageSectionIds } from '../../constants'
 
 const Container = styled.div`
     display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+    }
 `
 
-const SideBar = styled.div`
-    flex-basis: 30%;
-    background: #00b8f0;
-    padding: 20px;
-`
 const Main = styled.div`
-    flex-basis: 70%;
-    background: #a0a0a0;
+    width: 100%;
     section {
         height: 100vh;
         padding: 50px;
@@ -43,7 +44,7 @@ export const FAQ: React.FC = () => {
 
     return (
         <Container>
-            <SideBar>sidebar</SideBar>
+            <SideBar />
             <Main>
                 <section id={pageSectionIds.FAQ.faq}>
                     <h1>FAQ</h1>

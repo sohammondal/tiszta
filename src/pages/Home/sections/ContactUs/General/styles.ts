@@ -11,7 +11,6 @@ export const Container = styled.div`
             margin: 12px 0px;
             a {
                 color: white;
-                font-style: bolder;
             }
         }
     }
