@@ -1,18 +1,34 @@
 import React from 'react'
-import styled from 'styled-components'
+import { Pagination, Autoplay } from 'swiper'
+import { SwiperSlide } from 'swiper/react/swiper-react'
 
-import { flexRowCenter } from 'theme'
+import 'swiper/swiper.min.css'
+import 'swiper/modules/autoplay/autoplay.min.css'
+import 'swiper/modules/pagination/pagination.min.css'
+
+import { Container, SlideImg, StyledSwiper } from './styles'
 
 import { pageSectionIds } from '../../../../constants'
 
-const Container = styled.section`
-    width: 100vw;
-    height: 100vh;
-    ${flexRowCenter}
-    @media only screen and (min-width: 1024px) {
-    }
-`
-
 export const Carousel: React.FC = () => {
-    return <Container id={pageSectionIds.HOME.carousel}>Carousel</Container>
+    return (
+        <Container id={pageSectionIds.HOME.carousel}>
+            <StyledSwiper
+                modules={[Autoplay, Pagination]}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 4000 }}
+                loop
+            >
+                <SwiperSlide>
+                    <SlideImg about="1" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SlideImg about="2" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SlideImg about="3" />
+                </SwiperSlide>
+            </StyledSwiper>
+        </Container>
+    )
 }
