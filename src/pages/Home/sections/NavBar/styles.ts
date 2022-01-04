@@ -5,9 +5,11 @@ import { flexRowCenter } from 'theme'
 
 export const Nav = styled.nav`
     padding: 1.25rem 1.5rem;
+    position: absolute;
+    width: -webkit-fill-available;
+    z-index: 2;
     ${flexRowCenter}
     justify-content: space-between;
-    background-color: #000;
 
     @media only screen and (min-width: 1024px) {
         padding: 1.25rem 2.5rem;
