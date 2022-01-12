@@ -31,7 +31,7 @@ export const Accordion: React.FC<Props> = ({ trigger, ...props }) => {
                     typeof trigger === 'string' ? (
                         <>
                             <h3>{trigger}</h3>
-                            <div>{chevronIcon}</div>
+                            <span>{chevronIcon}</span>
                         </>
                     ) : (
                         trigger
