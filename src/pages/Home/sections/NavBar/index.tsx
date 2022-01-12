@@ -14,7 +14,7 @@ export const NavBar: React.FC = () => {
             </LogoWrapper>
             <HamburgerMenu
                 items={[
-                    <StyledLink to="/products" key="/products">
+                    <StyledLink to="/category" key="/category">
                         Products
                     </StyledLink>,
                     <StyledLink

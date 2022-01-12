@@ -16,14 +16,17 @@ export const Wrapper = styled.div`
             display: flex;
             justify-content: space-between;
             transition: transform 0.3s;
+            cursor: pointer;
 
             h3 {
                 margin: 0;
                 color: rgb(0, 26, 111);
+                flex-basis: 90%;
             }
 
-            div {
+            span {
                 ${flexColCenter}
+                flex-basis: 2%;
 
                 svg {
                     transition: transform 0.3s;
@@ -39,6 +42,7 @@ export const Wrapper = styled.div`
 
         .Collapsible__contentInner {
             font-weight: 400;
+            cursor: default;
         }
     }
 `
