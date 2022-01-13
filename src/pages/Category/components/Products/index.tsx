@@ -1,5 +1,6 @@
 import React from 'react'
 import Skeleton from 'react-loading-skeleton'
+import { Link } from 'react-router-dom'
 
 import {
     Container,
@@ -16,12 +17,14 @@ import 'react-loading-skeleton/dist/skeleton.css'
 const Product: React.FC<IProduct> = (props) => {
     const imgSrc = (props?.images || [])[0]
     return (
-        <ProductItem hover>
-            <div>
-                <img src={imgSrc} alt={props?.name} />
-                <span>{props?.name}</span>
-            </div>
-        </ProductItem>
+        <Link to={`/product/${props.uuid}`} state={props}>
+            <ProductItem hover>
+                <div>
+                    <img src={imgSrc} alt={props?.name} />
+                    <span>{props?.name}</span>
+                </div>
+            </ProductItem>
+        </Link>
     )
 }
 
