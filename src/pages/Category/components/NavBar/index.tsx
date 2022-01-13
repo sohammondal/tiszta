@@ -2,18 +2,12 @@ import React from 'react'
 
 import { HamburgerMenu, Logo } from 'components'
 
-import {
-    Nav,
-    LogoWrapper,
-    StyledLink,
-    Categories,
-    HamburgerWrapper,
-} from './styles'
+import { Nav, LogoWrapper, StyledLink, Categories } from './styles'
 
 const items = [
     {
         to: '/category',
-        title: 'All',
+        title: 'All Products',
     },
     {
         to: '/category/home-care',
@@ -39,16 +33,14 @@ export const NavBar: React.FC = () => {
                         </li>
                     ))}
                 </ul>
-                <HamburgerWrapper>
-                    <HamburgerMenu
-                        items={items.map((item) => (
-                            <StyledLink key={item.to} to={item.to}>
-                                {item.title}
-                            </StyledLink>
-                        ))}
-                    />
-                </HamburgerWrapper>
             </Categories>
+            <HamburgerMenu
+                items={items.map((item) => (
+                    <StyledLink key={item.to} to={item.to}>
+                        {item.title}
+                    </StyledLink>
+                ))}
+            />
         </Nav>
     )
 }
