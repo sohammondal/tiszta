@@ -2,7 +2,9 @@ import styled, { css } from 'styled-components'
 
 import { flexColCenter, flexRowCenter } from 'theme'
 
-export const Container = styled.div``
+export const Container = styled.main`
+    margin-bottom: 15px;
+`
 
 export const Description = styled.article`
     padding: 1% 15%;
@@ -25,7 +27,6 @@ export const ProductsContainer = styled.div`
     justify-content: center;
 
     @media only screen and (min-width: 1024px) {
-        justify-content: flex-start;
         padding: 1% 4%;
     }
 `

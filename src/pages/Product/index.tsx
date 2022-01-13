@@ -9,6 +9,10 @@ import { useData } from './useData'
 export const Product: React.FC = () => {
     const { isLoading, product } = useData()
 
+    React.useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <Container>
             <NavBar />

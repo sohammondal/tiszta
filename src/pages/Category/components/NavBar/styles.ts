@@ -12,6 +12,9 @@ export const Nav = styled.nav`
 
     @media only screen and (min-width: 1024px) {
         padding: 1.25rem 10rem;
+        .burger-button {
+            display: none;
+        }
     }
 `
 
@@ -44,10 +47,6 @@ export const Categories = styled.div`
                 margin: 0px 15px;
                 float: left;
             }
-        }
-
-        ${HamburgerWrapper} {
-            display: none;
         }
     }
 `

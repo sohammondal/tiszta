@@ -54,8 +54,12 @@ export const Products: React.FC = () => {
             </Description>
             <ProductsContainer>
                 {isLoading
-                    ? [1, 2, 3, 4, 5].map(ProductSkeleton)
-                    : products.map(Product)}
+                    ? [1, 2, 3, 4, 5].map((_, index) => (
+                          <ProductSkeleton key={index} />
+                      ))
+                    : products.map((product) => (
+                          <Product key={product.uuid} {...product} />
+                      ))}
             </ProductsContainer>
         </Container>
     )
