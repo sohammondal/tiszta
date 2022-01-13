@@ -8,7 +8,7 @@ import { pageSectionIds } from '../../../../constants'
 
 export const NavBar: React.FC = () => {
     return (
-        <Nav>
+        <Nav className="navbar">
             <LogoWrapper>
                 <Logo variant="lg" scaleOnHover fill="#fff" />
             </LogoWrapper>
@@ -21,19 +21,21 @@ export const NavBar: React.FC = () => {
                         to="/"
                         key="/about"
                         onClick={() => {
-                            document
-                                .getElementById(pageSectionIds.HOME.about)
-                                ?.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'center',
-                                    inline: 'center',
-                                })
+                            setTimeout(() => {
+                                document
+                                    .getElementById(pageSectionIds.HOME.about)
+                                    ?.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: 'center',
+                                        inline: 'center',
+                                    })
+                            })
                         }}
                     >
                         About
                     </StyledLink>,
                     <StyledLink
-                        to="/"
+                        to={window.location.pathname}
                         key="/contact"
                         onClick={() => {
                             document

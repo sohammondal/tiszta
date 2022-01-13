@@ -45,6 +45,7 @@ export const Logo: React.FC<Props> = ({ variant, ...props }) => {
         onClick: () => {
             navigate('/', {})
         },
+        className: 'tiszta-logo',
     }
 
     if (variant === 'sm') return <LogoSmall {...logoProps} />

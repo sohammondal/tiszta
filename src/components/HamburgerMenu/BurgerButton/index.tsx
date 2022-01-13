@@ -9,7 +9,7 @@ interface Props {
 
 export const BurgerButton: React.FC<Props> = ({ open, toggle }) => {
     return (
-        <Button $open={open} onClick={toggle}>
+        <Button $open={open} onClick={toggle} className="burger-button">
             <span />
             <span />
             <span />
