@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { flexColCenter, flexRowCenter } from 'theme'
 
@@ -30,7 +30,7 @@ export const ProductsContainer = styled.div`
     }
 `
 
-export const ProductItem = styled.div`
+export const ProductItem = styled.div<{ hover?: boolean }>`
     flex-basis: 33%;
     margin: 30px 0px;
     ${flexColCenter}
@@ -38,11 +38,16 @@ export const ProductItem = styled.div`
     div {
         ${flexColCenter}
         width: max-content;
-        cursor: pointer;
-        :hover {
-            transform: scale(1.2);
-            transition: 0.3s;
-        }
+
+        ${(props) =>
+            props.hover &&
+            css`
+                cursor: pointer;
+                :hover {
+                    transform: scale(1.1);
+                    transition: 0.3s;
+                }
+            `}
 
         img {
             width: 300px;
