@@ -6,17 +6,13 @@ import { ContactUs } from 'pages/Home/sections'
 import { NavBar, Products } from './components'
 import { Container } from './styles'
 
-const AllProducts: React.FC = () => {
+export const Category: React.FC = () => {
     const { pathname } = useLocation()
 
-    return pathname !== '/category' ? null : <Products />
-}
-
-export const Category: React.FC = () => {
     return (
         <Container>
             <NavBar />
-            <AllProducts />
+            {pathname === '/category' && <Products />}
             <Routes>
                 <Route path="home-care" element={<Products />} />
                 <Route path="personal-care" element={<Products />} />
