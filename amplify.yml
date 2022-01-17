@@ -4,10 +4,10 @@ frontend:
         preBuild:
             commands:
                 - yarn install
-        # IMPORTANT - Please verify your build commands
         build:
             commands:
-                - yarn build
+                - if [ "${AWS_BRANCH}" = "master" ]; then yarn build:production; fi
+                - if [ "${AWS_BRANCH}" = "staging" ]; then yarn build:staging; fi
     artifacts:
         baseDirectory: .next
         files:
