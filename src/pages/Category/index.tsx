@@ -1,11 +1,9 @@
 import { GetServerSidePropsContext } from 'next'
 import React from 'react'
 
-import { ContactUs } from 'pages/home/sections'
+import { NavBar, Products } from 'sections/category'
+import { ContactUs } from 'sections/home'
 import { ICategory, IProduct } from 'types'
-
-import { NavBar, Products } from './components'
-import { Container } from './styles'
 
 // This gets called on every request
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
@@ -44,11 +42,11 @@ export const Category: React.FC<Props> = ({
     categories,
     category,
 }) => (
-    <Container>
+    <>
         <NavBar categories={categories} />
         <Products products={products} category={category} />
         <ContactUs />
-    </Container>
+    </>
 )
 
 export default Category

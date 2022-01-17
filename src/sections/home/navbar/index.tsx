@@ -6,7 +6,7 @@ import { scrollTo } from 'helpers'
 
 import { Nav, LogoWrapper, StyledLink } from './styles'
 
-import { pageSectionIds } from '../../../../constants'
+import { pageSectionIds } from '../../../constants'
 
 export const NavBar: React.FC = () => {
     return (

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Container, Section } from './styles'
 
-import { pageSectionIds } from '../../../../constants'
+import { pageSectionIds } from '../../../constants'
 
 export const About: React.FC = () => {
     return (

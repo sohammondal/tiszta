@@ -6,7 +6,7 @@ import { ContactFrom } from './ContactForm'
 import { General } from './General'
 import { Container, LogoWrapper, Section, Copyright } from './styles'
 
-import { pageSectionIds } from '../../../../constants'
+import { pageSectionIds } from '../../../constants'
 
 export const ContactUs: React.FC = () => {
     return (
