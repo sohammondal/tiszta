@@ -1,32 +1,40 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import { Logo } from 'components'
+import { scrollTo } from 'helpers'
 
 import { Container, Wrapper, LogoWrapper } from './styles'
 
 import { pageSectionIds } from '../../../constants'
 
+type ClickEvent = React.MouseEvent<HTMLAnchorElement, MouseEvent>
+
 const listItems = [
     {
-        to: '',
+        href: '',
         children: 'FAQs',
-        state: {
-            section: pageSectionIds.FAQ.faq,
+        onClick: (e: ClickEvent) => {
+            e.preventDefault()
+            scrollTo(pageSectionIds.FAQ.faq, {
+                block: 'start',
+                inline: 'start',
+            })
         },
     },
     {
-        to: '',
-        children: 'Privacy Policy',
-        state: {
-            section: pageSectionIds.FAQ.privacyPolicy,
+        href: '',
+        children: ' Privacy Policy',
+        onClick: (e: ClickEvent) => {
+            e.preventDefault()
+            scrollTo(pageSectionIds.FAQ.privacyPolicy)
         },
     },
     {
-        to: '',
+        href: '',
         children: 'Terms of Service',
-        state: {
-            section: pageSectionIds.FAQ.termsOfService,
+        onClick: (e: ClickEvent) => {
+            e.preventDefault()
+            scrollTo(pageSectionIds.FAQ.termsOfService)
         },
     },
 ]
@@ -41,7 +49,7 @@ export const SideBar: React.FC = () => {
                 <ul>
                     {listItems.map((item, index) => (
                         <li key={`sidebar-list-item-${index}`}>
-                            <Link {...item} />
+                            <a {...item} />
                         </li>
                     ))}
                 </ul>

@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import React from 'react'
 
 import { HamburgerMenu, Logo } from 'components'
+import { scrollTo } from 'helpers'
 
 import { Nav, LogoWrapper, StyledLink } from './styles'
 
@@ -14,37 +16,24 @@ export const NavBar: React.FC = () => {
             </LogoWrapper>
             <HamburgerMenu
                 items={[
-                    <StyledLink to="/category" key="/category">
-                        Products
-                    </StyledLink>,
+                    <Link href="/category" key="/category" passHref>
+                        <StyledLink>Products</StyledLink>
+                    </Link>,
                     <StyledLink
-                        to="/"
                         key="/about"
+                        href="/"
                         onClick={() => {
                             setTimeout(() => {
-                                document
-                                    .getElementById(pageSectionIds.HOME.about)
-                                    ?.scrollIntoView({
-                                        behavior: 'smooth',
-                                        block: 'center',
-                                        inline: 'center',
-                                    })
+                                scrollTo(pageSectionIds.HOME.about)
                             })
                         }}
                     >
                         About
                     </StyledLink>,
                     <StyledLink
-                        to={window.location.pathname}
                         key="/contact"
                         onClick={() => {
-                            document
-                                .getElementById(pageSectionIds.HOME.contactUs)
-                                ?.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'center',
-                                    inline: 'center',
-                                })
+                            scrollTo(pageSectionIds.HOME.contactUs)
                         }}
                     >
                         Contact

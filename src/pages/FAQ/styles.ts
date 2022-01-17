@@ -24,3 +24,9 @@ export const Main = styled.div`
         }
     }
 `
+
+export const Section = styled.section`
+    overflow: auto;
+    height: 50vh;
+    padding: 50px;
+`

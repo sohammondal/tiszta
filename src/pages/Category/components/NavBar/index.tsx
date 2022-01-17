@@ -1,25 +1,14 @@
+import Link from 'next/link'
 import React from 'react'
 
 import { HamburgerMenu, Logo } from 'components'
+import { ICategory } from 'types'
 
 import { Nav, LogoWrapper, StyledLink, Categories } from './styles'
 
-const items = [
-    {
-        to: '/category',
-        title: 'All Products',
-    },
-    {
-        to: '/category/home-care',
-        title: 'Home care',
-    },
-    {
-        to: '/category/personal-care',
-        title: 'Personal Care',
-    },
-]
-
-export const NavBar: React.FC = () => {
+export const NavBar: React.FC<{ categories: ICategory[] }> = ({
+    categories,
+}) => {
     return (
         <Nav>
             <LogoWrapper>
@@ -27,18 +16,29 @@ export const NavBar: React.FC = () => {
             </LogoWrapper>
             <Categories>
                 <ul>
-                    {items.map((item) => (
-                        <li key={item.to}>
-                            <StyledLink to={item.to}>{item.title}</StyledLink>
+                    {categories?.map((category) => (
+                        <li key={category.uuid}>
+                            <Link
+                                href={`/category/${category.uuid}`}
+                                as={`/category/${category.slug}`}
+                                passHref
+                            >
+                                <StyledLink>{category.name}</StyledLink>
+                            </Link>
                         </li>
                     ))}
                 </ul>
             </Categories>
             <HamburgerMenu
-                items={items.map((item) => (
-                    <StyledLink key={item.to} to={item.to}>
-                        {item.title}
-                    </StyledLink>
+                items={categories?.map((category) => (
+                    <Link
+                        key={category.uuid}
+                        href={`/category/${category.uuid}`}
+                        as={`/category/${category.slug}`}
+                        passHref
+                    >
+                        <StyledLink>{category.name}</StyledLink>
+                    </Link>
                 ))}
             />
         </Nav>

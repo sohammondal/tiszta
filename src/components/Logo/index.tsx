@@ -1,5 +1,5 @@
+import { useRouter } from 'next/router'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 
 import { theme } from 'theme'
 
@@ -13,6 +13,7 @@ interface Props {
     height?: string
     xmlns?: string
     onClick?: () => void
+    disableClick?: boolean
 }
 
 const LogoLarge: React.FC<Props> = (props) => {
@@ -37,13 +38,14 @@ const LogoSmall: React.FC<Props> = (props) => {
     )
 }
 
-export const Logo: React.FC<Props> = ({ variant, ...props }) => {
-    const navigate = useNavigate()
+export const Logo: React.FC<Props> = ({ variant, disableClick, ...props }) => {
+    const router = useRouter()
 
     const logoProps = {
         ...props,
         onClick: () => {
-            navigate('/', {})
+            if (disableClick) return
+            router.push({ pathname: '/' }, '/', { scroll: true })
         },
         className: 'tiszta-logo',
     }
@@ -59,4 +61,5 @@ Logo.defaultProps = {
     width: '100%',
     height: '100%',
     xmlns: 'http://www.w3.org/2000/svg',
+    disableClick: false,
 }

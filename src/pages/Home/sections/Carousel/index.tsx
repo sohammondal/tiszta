@@ -1,20 +1,21 @@
 import React from 'react'
-import { Pagination, Autoplay } from 'swiper'
-import { SwiperSlide } from 'swiper/react/swiper-react'
+import Swiper, { Pagination, Autoplay } from 'swiper'
+import { SwiperSlide } from 'swiper/react'
 
 import 'swiper/swiper.min.css'
-import 'swiper/modules/autoplay/autoplay.min.css'
-import 'swiper/modules/pagination/pagination.min.css'
+import 'swiper/components/navigation/navigation.min.css'
+import 'swiper/components/pagination/pagination.min.css'
 
 import { Container, SlideImg, StyledSwiper } from './styles'
 
 import { pageSectionIds } from '../../../../constants'
 
+Swiper.use([Pagination, Autoplay])
+
 export const Carousel: React.FC = () => {
     return (
         <Container id={pageSectionIds.HOME.carousel}>
             <StyledSwiper
-                modules={[Autoplay, Pagination]}
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 4000 }}
                 loop

@@ -1,35 +1,36 @@
+import { useRouter } from 'next/router'
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+
+import { scrollTo } from 'helpers'
 
 import { FAQs } from './FAQs'
 import { SideBar } from './Sidebar'
 import { Container, Main } from './styles'
 
-interface State {
-    section: string
-}
+import { pageSectionIds } from '../../constants'
 
-export const FAQ: React.FC = () => {
-    const location = useLocation()
-    const state = location.state as State
+const FAQ: React.FC = () => {
+    const router = useRouter()
 
     React.useEffect(() => {
-        if (!state) return
-        const section = document.getElementById(state.section)
-        section &&
-            section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center',
-                inline: 'center',
-            })
-    }, [state])
+        const section = router.query.section as string
+        scrollTo(section)
+    }, [router.query])
 
     return (
         <Container>
             <SideBar />
             <Main>
                 <FAQs />
+                <section id={pageSectionIds.FAQ.privacyPolicy}>
+                    <h1>Privacy Policy</h1>
+                </section>
+                <section id={pageSectionIds.FAQ.termsOfService}>
+                    <h1>Terms Of Service</h1>
+                </section>
             </Main>
         </Container>
     )
 }
+
+export default FAQ
