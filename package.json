@@ -15,10 +15,10 @@
         "web-vitals": "^1.0.1"
     },
     "scripts": {
-        "dev": "next dev",
-        "dev:debug": "NODE_OPTIONS='--inspect' next dev",
-        "build:production": "env-cmd -f .env.production next build",
-        "build:staging": "env-cmd -f .env.staging next build",
+        "dev": "env-cmd -f env/.env.development next dev",
+        "dev:debug": "NODE_OPTIONS='--inspect' env-cmd -f env/.env.development next dev",
+        "build:production": "env-cmd -f env/.env.production next build",
+        "build:staging": "env-cmd -f env/.env.staging next build",
         "start": "next start",
         "prettier": "prettier '*/**/*.{js,ts,tsx}'",
         "prettier:fix": "prettier --write '*/**/*.{js,ts,tsx}'",
