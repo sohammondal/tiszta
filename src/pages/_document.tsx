@@ -55,8 +55,6 @@ export default class MyDocument extends Document {
                         rel="apple-touch-icon"
                         href="/assets/images/logo192.png"
                     />
-                    {/* Step 5: Output the styles in the head  */}
-                    {/* {this.props.styleTags} */}
                 </Head>
                 <body>
                     <AppProvider>

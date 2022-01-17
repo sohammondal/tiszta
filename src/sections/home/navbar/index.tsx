@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 import { HamburgerMenu, Logo } from 'components'
@@ -9,6 +10,7 @@ import { Nav, LogoWrapper, StyledLink } from './styles'
 import { pageSectionIds } from '../../../constants'
 
 export const NavBar: React.FC = () => {
+    const { pathname } = useRouter()
     return (
         <Nav className="navbar">
             <LogoWrapper>
@@ -19,17 +21,24 @@ export const NavBar: React.FC = () => {
                     <Link href="/category" key="/category" passHref>
                         <StyledLink>Products</StyledLink>
                     </Link>,
-                    <StyledLink
+                    <Link
                         key="/about"
-                        href="/"
-                        onClick={() => {
-                            setTimeout(() => {
-                                scrollTo(pageSectionIds.HOME.about)
-                            })
-                        }}
+                        href={`/?section=${pageSectionIds.HOME.about}`}
+                        as="/"
                     >
-                        About
-                    </StyledLink>,
+                        <StyledLink
+                            href="/"
+                            onClick={(e) => {
+                                if (pathname === '/') {
+                                    e.preventDefault()
+                                    scrollTo(pageSectionIds.HOME.about)
+                                    return
+                                }
+                            }}
+                        >
+                            About
+                        </StyledLink>
+                    </Link>,
                     <StyledLink
                         key="/contact"
                         onClick={() => {
