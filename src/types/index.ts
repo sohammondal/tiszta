@@ -1,6 +1,7 @@
 export interface ICategory {
     uuid: string
     name: string
+    slug?: string
     description?: string
     image?: string
 }

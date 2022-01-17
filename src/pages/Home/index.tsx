@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { NavBar, About, Carousel, ContactUs } from './sections'
+import { NavBar, About, ContactUs, Carousel } from './sections'
 
 const Container = styled.div``
 

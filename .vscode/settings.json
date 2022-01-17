@@ -1,5 +1,12 @@
 {
-    "cSpell.words": ["commitlint", "Dishwash", "Handwash", "Swiper", "tiszta"],
+    "cSpell.words": [
+        "commitlint",
+        "Dishwash",
+        "Handwash",
+        "Mischka",
+        "Swiper",
+        "tiszta"
+    ],
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "[svg]": {

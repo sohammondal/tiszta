@@ -16,9 +16,7 @@ export const AppContext: React.Context<IAppContext> = createContext(
 
 export const useAppContext = (): IAppContext => useContext(AppContext)
 
-export const AppProvider: React.FC<{
-    children: React.ReactElement
-}> = ({ children }) => {
+export const AppProvider: React.FC = ({ children }) => {
     const [isDark, setIsDark] = useState(false)
     const toggleTheme = () => {
         setIsDark(!isDark)

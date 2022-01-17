@@ -1,4 +1,4 @@
-export * from './About'
-export * from './Carousel'
-export * from './ContactUs'
-export * from './NavBar'
+export { About } from './About'
+export { Carousel } from './Carousel'
+export { ContactUs } from './ContactUs'
+export { NavBar } from './NavBar'

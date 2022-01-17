@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Swiper } from 'swiper/react/swiper-react'
+import { Swiper } from 'swiper/react'
 
 export const Container = styled.section`
     width: 100vw;

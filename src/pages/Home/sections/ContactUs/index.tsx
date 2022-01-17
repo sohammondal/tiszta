@@ -13,7 +13,7 @@ export const ContactUs: React.FC = () => {
         <Container id={pageSectionIds.HOME.contactUs}>
             <Section>
                 <LogoWrapper>
-                    <Logo fill="black" scaleOnHover />
+                    <Logo fill="black" scaleOnHover disableClick />
                 </LogoWrapper>
                 <General />
                 <ContactFrom />

@@ -1,6 +1,8 @@
+// import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React from 'react'
-import Skeleton from 'react-loading-skeleton'
-import { Link } from 'react-router-dom'
+
+import { ICategory, IProduct } from 'types'
 
 import {
     Container,
@@ -9,57 +11,53 @@ import {
     ProductItem,
 } from './styles'
 
-import { useData } from '../../hooks/useData'
-import { IProduct } from '../../types'
-
-import 'react-loading-skeleton/dist/skeleton.css'
-
 const Product: React.FC<IProduct> = (props) => {
     const imgSrc = (props?.images || [])[0]
+
+    const router = useRouter()
+
     return (
-        <Link to={`/product/${props.uuid}`} state={props}>
+        <a
+            href={`/product/${props.uuid}`}
+            onClick={(e) => {
+                e.preventDefault()
+                router.push(
+                    {
+                        pathname: `/product/${props.uuid}`,
+                        query: {
+                            product: JSON.stringify(props),
+                        },
+                    },
+                    `/product/${props.uuid}`
+                )
+            }}
+        >
             <ProductItem hover>
                 <div>
                     <img src={imgSrc} alt={props?.name} />
                     <span>{props?.name}</span>
                 </div>
             </ProductItem>
-        </Link>
+        </a>
     )
 }
 
-const ProductSkeleton = () => {
-    return (
-        <ProductItem>
-            <div>
-                <Skeleton height={300} width={300} />
-                <span>
-                    <Skeleton width={'80%'} />
-                </span>
-            </div>
-        </ProductItem>
-    )
+interface Props {
+    products: IProduct[]
+    category: ICategory
 }
 
-export const Products: React.FC = () => {
-    const { isLoading, products, category } = useData()
-
+export const Products: React.FC<Props> = ({ products, category }) => {
     return (
         <Container>
             <Description>
-                <h1>{isLoading ? <Skeleton /> : category?.name}</h1>
-                <p>
-                    {isLoading ? <Skeleton count={3} /> : category?.description}
-                </p>
+                <h1>{category?.name}</h1>
+                <p>{category?.description}</p>
             </Description>
             <ProductsContainer>
-                {isLoading
-                    ? [1, 2, 3, 4, 5].map((_, index) => (
-                          <ProductSkeleton key={index} />
-                      ))
-                    : products.map((product) => (
-                          <Product key={product.uuid} {...product} />
-                      ))}
+                {products?.map((product) => (
+                    <Product key={product.uuid} {...product} />
+                ))}
             </ProductsContainer>
         </Container>
     )

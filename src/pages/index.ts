@@ -1,5 +1,0 @@
-export * from './Home'
-export * from './FAQ'
-export * from './Product'
-export * from './404'
-export * from './Category'

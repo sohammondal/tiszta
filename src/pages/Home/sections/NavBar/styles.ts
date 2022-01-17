@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 import { flexRowCenter } from 'theme'
@@ -21,7 +21,7 @@ export const LogoWrapper = styled.div`
     height: 60px;
 `
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled.a`
     color: #fff;
     font-size: 1.5rem;
 `

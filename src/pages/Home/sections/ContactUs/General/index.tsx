@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import { Container } from './styles'
 
@@ -7,25 +7,19 @@ import { pageSectionIds } from '../../../../../constants'
 
 const listItems = [
     {
-        to: '/faq',
-        children: 'FAQs',
-        state: {
-            section: pageSectionIds.FAQ.faq,
-        },
+        as: '/faq',
+        href: `/faq?section=${pageSectionIds.FAQ.faq}`,
+        children: <a>FAQs</a>,
     },
     {
-        to: '/faq',
-        children: 'Privacy Policy',
-        state: {
-            section: pageSectionIds.FAQ.privacyPolicy,
-        },
+        as: '/faq',
+        href: `/faq?section=${pageSectionIds.FAQ.privacyPolicy}`,
+        children: <a>Privacy Policy</a>,
     },
     {
-        to: '/faq',
-        children: 'Terms of Service',
-        state: {
-            section: pageSectionIds.FAQ.termsOfService,
-        },
+        as: '/faq',
+        href: `/faq?section=${pageSectionIds.FAQ.termsOfService}`,
+        children: <a>Terms of Service</a>,
     },
 ]
 
@@ -36,7 +30,7 @@ export const General: React.FC = () => {
             <ul>
                 {listItems.map((item, index) => (
                     <li key={`general-list-item-${index}`}>
-                        <Link {...item} />
+                        <Link {...item} passHref />
                     </li>
                 ))}
             </ul>
