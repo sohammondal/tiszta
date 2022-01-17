@@ -8,7 +8,7 @@ import 'swiper/components/pagination/pagination.min.css'
 
 import { Container, SlideImg, StyledSwiper } from './styles'
 
-import { pageSectionIds } from '../../../../constants'
+import { pageSectionIds } from '../../../constants'
 
 Swiper.use([Pagination, Autoplay])
 
