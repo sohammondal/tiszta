@@ -15,6 +15,12 @@ import { ContactUs } from '../home'
 
 // This gets called on every request
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+    console.log(process.env.HOST)
+    console.log(process.env.ENV)
+    console.log(ctx.resolvedUrl)
+    console.log(ctx.req.url)
+    console.log(ctx.query)
+    console.log(ctx.params)
     try {
         const categoriesResp = await fetch(`${process.env.HOST}/api/category`)
         const categories: ICategory[] = await categoriesResp.json()
