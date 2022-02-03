@@ -1,1 +1,1 @@
-export { category as default, getServerSideProps } from 'sections/category'
+export { Category as default, getServerSideProps } from 'sections/category'
