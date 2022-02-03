@@ -9,7 +9,7 @@ import { Container, Main } from './styles'
 
 import { pageSectionIds } from '../../constants'
 
-export const faq: React.FC = () => {
+export const FAQ: React.FC = () => {
     const router = useRouter()
 
     React.useEffect(() => {

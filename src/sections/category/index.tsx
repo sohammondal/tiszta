@@ -48,7 +48,7 @@ interface Props {
     category: ICategory
 }
 
-export const category: React.FC<Props> = ({
+export const Category: React.FC<Props> = ({
     products,
     categories,
     category,

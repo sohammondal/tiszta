@@ -6,7 +6,7 @@ import { Container } from './styles'
 
 import { ContactUs, NavBar } from '../home'
 
-export const product: React.FC<{ product: IProduct }> = ({ product }) => {
+export const Product: React.FC<{ product: IProduct }> = ({ product }) => {
     const imgSrc = (product?.images || [])[0]
 
     return (
@@ -25,5 +25,3 @@ export const product: React.FC<{ product: IProduct }> = ({ product }) => {
         </Container>
     )
 }
-
-export default product

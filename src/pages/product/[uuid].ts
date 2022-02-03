@@ -1,7 +1,7 @@
 import isEmpty from 'lodash/isEmpty'
 import { GetServerSidePropsContext } from 'next'
 
-export { product as default } from 'sections/product'
+export { Product as default } from 'sections/product'
 
 // This gets called on every request
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {

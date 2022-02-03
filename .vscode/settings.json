@@ -1,15 +1,8 @@
 {
-    "cSpell.words": [
-        "commitlint",
-        "Dishwash",
-        "Handwash",
-        "Mischka",
-        "Swiper",
-        "tiszta"
-    ],
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "[svg]": {
-        "editor.defaultFormatter": "jock.svg"
-    }
+    "cSpell.words": ["Dishwash", "Handwash", "Mischka", "Swiper", "tiszta"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true, // Tell VSCode to format files on save
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

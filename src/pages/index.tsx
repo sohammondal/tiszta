@@ -7,7 +7,7 @@ import { NavBar, About, ContactUs, Carousel } from 'sections/home'
 
 const Container = styled.div``
 
-const home: React.FC = () => {
+const Home: React.FC = () => {
     const router = useRouter()
 
     React.useEffect(() => {
@@ -25,4 +25,4 @@ const home: React.FC = () => {
     )
 }
 
-export default home
+export default Home

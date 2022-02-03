@@ -1,36 +1,17 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
+    "plugins": ["@typescript-eslint"],
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
+        "next/core-web-vitals",
         "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended",
-        "prettier",
-        "plugin:import/errors", // enabling import errors
-        "plugin:import/warnings", // enabling import warnings,
-        "plugin:import/typescript" // enabling import typescript
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "prettier"
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": ["react", "@typescript-eslint", "import"],
     "rules": {
-        "prettier/prettier": "error",
-        "indent": "off",
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "single"],
-        "semi": ["error", "never"],
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error"],
-        "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-empty-interface": "warn",
         "import/order": [
             "error",
             {
@@ -51,19 +32,5 @@
                 }
             }
         ]
-    },
-    "settings": {
-        "react": {
-            "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
-        },
-        "import/parsers": {
-            "@typescript-eslint/parser": [".ts", ".tsx"]
-        },
-        "import/resolver": {
-            "node": {
-                "extensions": [".js", ".jsx", ".ts", ".tsx"]
-            },
-            "typescript": {}
-        }
     }
 }
