@@ -1,8 +1,3 @@
-/* eslint-disable react/display-name */
-
-// export { NavBar } from './nav-bar'
-// export { Products } from './products'
-
 import { GetServerSidePropsContext } from 'next'
 import React from 'react'
 
